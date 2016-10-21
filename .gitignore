@@ -1,0 +1,7 @@
+/vendor
+
+// PhpStorm
+.idea
+
+// OSX
+.DS_Store

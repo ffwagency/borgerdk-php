@@ -1,0 +1,26 @@
+{
+    "name": "ffwagency/borgerdk-php",
+    "description": "A simple PHP class to fetch articles from the Borger.dk article service.",
+    "homepage": "https://github.com/ffwagency/borgerdk-php",
+    "keywords": [
+        "php", "ffwagency", "borgerdk", "borger.dk"
+    ],
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Jens Beltofte",
+            "email": "jens.beltofte@ffwagency.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "BorgerDk\\ArticleService\\": "src/BorgerDk/ArticleService"
+        }
+    }
+}
