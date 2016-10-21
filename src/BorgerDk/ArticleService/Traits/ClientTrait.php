@@ -31,6 +31,15 @@ trait ClientTrait
     protected $debug = ["trace" => 1, "exceptions" => 1];
 
     /**
+     * Municipality Code
+     *
+     * Used in the specific article calls to get the correct municipality context.
+     *
+     * @var integer
+     */
+    protected $municipalityCode;
+
+    /**
      * Return client
      *
      * @return \SoapClient

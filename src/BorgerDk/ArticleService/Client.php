@@ -13,9 +13,7 @@ use BorgerDk\ArticleService\Traits;
 class Client implements ClientInterface
 {
     use Traits\ClientTrait;
-
-    protected $municipalityCode;
-
+    
     /**
      *
      */
