@@ -12,8 +12,6 @@ use BorgerDk\ArticleService\Traits;
  */
 class Client
 {
-    //use Traits\ClientTrait;
-
     /**
      * SOAP Connection
      *
