@@ -1,6 +1,6 @@
 <?php
 
-namespace BorgerDk\ArticleService\Resources;
+namespace BorgerDk\ArticleService\Resources\Endpoints;
 
 use BorgerDk\ArticleService;
 use BorgerDk\ArticleService\Resources\ResourceAbstract;

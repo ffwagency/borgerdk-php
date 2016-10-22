@@ -3,7 +3,7 @@
 namespace BorgerDk\ArticleService\Resources;
 
 use BorgerDk\ArticleService;
-use BorgerDk\ArticleService\ClientInterface as Client;
+use BorgerDk\ArticleService\Client as Client;
 
 /**
  * Abstract class for all service endpoints
@@ -68,15 +68,26 @@ abstract class ResourceAbstract
         return $this->resourceResult;
     }
 
-    /**
+    /***
      * Return the resource name using the name of the class (used as soap methods / endpoints)
+     *
+     * @param bool $parent
+     *   If TRUE are we first trying with the parent class name to support classes extending
+     *   the default resource endpoint classes.
      *
      * @return string
      */
-    protected function getResourceNameFromClass()
+    protected function getResourceNameFromClass($parent = TRUE)
     {
-        $namespacedClassName = get_class($this);
-        return join('', array_slice(explode('\\', $namespacedClassName), -1));
-    }
+        $namespacedClassName = $parent ? get_parent_class($this) : get_class($this);
+        $resourceName = join('', array_slice(explode('\\', $namespacedClassName), -1));
 
+        $reflection = new \ReflectionClass($namespacedClassName);
+        if ($reflection->isAbstract()) {
+            return $this->getResourceNameFromClass(FALSE);
+        }
+        else {
+            return $resourceName;
+        }
+    }
 }
