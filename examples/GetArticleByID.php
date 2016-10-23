@@ -7,7 +7,7 @@ use BorgerDk\ArticleService\Resources\Endpoints;
 
 $client = new BorgerDkClient();
 $params = array('articleID' => 150, 'municipalityCode' => 157);
-$articles = new Endpoints\GetArticleByID($client, $params);
+$article = new Endpoints\GetArticleByID($client, $params);
 
 echo "<pre>";
-print_r($articles->getResultRaw());
+print_r($article->getResultFormatted());

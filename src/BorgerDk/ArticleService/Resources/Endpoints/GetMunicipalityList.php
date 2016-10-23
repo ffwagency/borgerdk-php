@@ -4,7 +4,6 @@ namespace BorgerDk\ArticleService\Resources\Endpoints;
 
 use BorgerDk\ArticleService;
 use BorgerDk\ArticleService\Resources\ResourceAbstract;
-use BorgerDk\ArticleService\ClientInterface as Client;
 
 /**
  * Class GetMunicipalityList

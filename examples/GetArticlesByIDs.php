@@ -10,4 +10,4 @@ $params = array('articleIDs' => array(150, 152, 154, 155), 'municipalityCode' =>
 $articles = new Endpoints\GetArticlesByIDs($client, $params);
 
 echo "<pre>";
-print_r($articles->getResultRaw());
+print_r($articles->getResultFormatted());

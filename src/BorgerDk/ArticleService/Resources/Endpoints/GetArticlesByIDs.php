@@ -3,15 +3,14 @@
 namespace BorgerDk\ArticleService\Resources\Endpoints;
 
 use BorgerDk\ArticleService;
-use BorgerDk\ArticleService\Resources\ResourceAbstract;
-use BorgerDk\ArticleService\Client as Client;
+use BorgerDk\ArticleService\Resources\ArticleAbstract;
 
 /**
  * Class GetArticlesByIDs
  *
  * @package BorgerDk\ArticleService
  */
-class GetArticlesByIDs extends ResourceAbstract
+class GetArticlesByIDs extends ArticleAbstract
 {
 
 }
