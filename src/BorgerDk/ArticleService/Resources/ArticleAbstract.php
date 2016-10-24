@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the borgerdk-php SDK.
+ *
+ * (c) Jens Beltofte <jens.beltofte@ffwagency.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BorgerDk\ArticleService\Resources;
 
 use BorgerDk\ArticleService;
@@ -7,6 +16,8 @@ use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Abstract class for all endpoints returning full articles.
+ *
+ * @package BorgerDk\ArticleService
  */
 abstract class ArticleAbstract extends ResourceAbstract
 {
@@ -19,7 +30,7 @@ abstract class ArticleAbstract extends ResourceAbstract
     {
         $items = array();
 
-        if (is_array($this->resourceResult->Article)) {
+        if (isset($this->resourceResult->Article)) {
             foreach ($this->resourceResult->Article as $id => $article) {
                 $article_item = $this->formatSingleArticle($article);
                 $items[$article_item->id] = $article_item;

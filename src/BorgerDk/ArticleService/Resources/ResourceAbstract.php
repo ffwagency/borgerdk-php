@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the borgerdk-php SDK.
+ *
+ * (c) Jens Beltofte <jens.beltofte@ffwagency.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BorgerDk\ArticleService\Resources;
 
 use BorgerDk\ArticleService;
@@ -7,6 +16,8 @@ use BorgerDk\ArticleService\Client as Client;
 
 /**
  * Abstract class for all service endpoints
+ *
+ * @package BorgerDk\ArticleService
  */
 abstract class ResourceAbstract
 {
