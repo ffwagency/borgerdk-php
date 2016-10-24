@@ -32,12 +32,12 @@ abstract class ArticleAbstract extends ResourceAbstract
 
         if (isset($this->resourceResult->Article)) {
             foreach ($this->resourceResult->Article as $id => $article) {
-                $article_item = $this->formatSingleArticle($article);
-                $items[$article_item->id] = $article_item;
+                $articleItem = $this->formatSingleArticle($article);
+                $items[$articleItem->id] = $articleItem;
             }
         } else {
-            $article_item = $this->formatSingleArticle($this->resourceResult);
-            $items[$article_item->id] = $article_item;
+            $articleItem = $this->formatSingleArticle($this->resourceResult);
+            $items[$articleItem->id] = $articleItem;
         }
 
         return $items;
