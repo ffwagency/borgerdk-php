@@ -31,7 +31,7 @@ abstract class ArticleAbstract extends ResourceAbstract
         $items = array();
 
         if (isset($this->resourceResult->Article)) {
-            foreach ($this->resourceResult->Article as $id => $article) {
+            foreach ($this->resourceResult->Article as $article) {
                 $articleItem = $this->formatSingleArticle($article);
                 $items[$articleItem->id] = $articleItem;
             }
