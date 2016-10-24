@@ -17,7 +17,7 @@ convertWarningsToExceptions="true"
 </php>
 
 <testsuites>
-  <testsuite name="Borger.dk Article Export Service PHP SDK - Unit Test Suites">
+  <testsuite name="BorgerDk Article Export Service PHP SDK Unit Test Suite">
     <directory suffix="Test.php">tests/BorgerDk/ArticleService/UnitTests</directory>
   </testsuite>
 </testsuites>
