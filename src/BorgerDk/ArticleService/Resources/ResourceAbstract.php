@@ -64,9 +64,8 @@ abstract class ResourceAbstract
             $this->resourceResultName = $this->resourceName . 'Result';
         }
 
-        $this->resourceResult = $this->client
-            ->{$this->resourceName}($this->params)
-            ->{$this->resourceResultName};
+        $result = $this->client->{$this->resourceName}($this->params);
+        $this->resourceResult = $result->{$this->resourceResultName};
     }
 
     /**
@@ -88,16 +87,15 @@ abstract class ResourceAbstract
      *
      * @return string
      */
-    protected function getResourceNameFromClass($parent = TRUE)
+    protected function getResourceNameFromClass($parent = true)
     {
         $namespacedClassName = $parent ? get_parent_class($this) : get_class($this);
         $resourceName = join('', array_slice(explode('\\', $namespacedClassName), -1));
 
         $reflection = new \ReflectionClass($namespacedClassName);
         if ($reflection->isAbstract()) {
-            return $this->getResourceNameFromClass(FALSE);
-        }
-        else {
+            return $this->getResourceNameFromClass(false);
+        } else {
             return $resourceName;
         }
     }

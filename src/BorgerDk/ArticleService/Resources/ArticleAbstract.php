@@ -35,8 +35,7 @@ abstract class ArticleAbstract extends ResourceAbstract
                 $article_item = $this->formatSingleArticle($article);
                 $items[$article_item->id] = $article_item;
             }
-        }
-        else {
+        } else {
             $article_item = $this->formatSingleArticle($this->resourceResult);
             $items[$article_item->id] = $article_item;
         }
@@ -66,22 +65,26 @@ abstract class ArticleAbstract extends ResourceAbstract
         $data->publishDate = $article->PublishingDate;
 
         // Extract self service links
-        $data->selfServiceLinks = $crawler->filter('#selvbetjeningslinks > ul > li')->each(function (Crawler $node, $i) {
-            $link = new \stdClass();
-            $link->id = $this->getAttributeId($node);
-            $link->url = $node->filter('a')->attr('href');
-            $link->label = trim($node->filter('a')->text());
-            $link->title = trim($node->filter('a')->attr('title'));
-            return $link;
-        });
+        $data->selfServiceLinks = $crawler->filter('#selvbetjeningslinks > ul > li')->each(
+            function (Crawler $node, $i) {
+                $link = new \stdClass();
+                $link->id = $this->getAttributeId($node);
+                $link->url = $node->filter('a')->attr('href');
+                $link->label = trim($node->filter('a')->text());
+                $link->title = trim($node->filter('a')->attr('title'));
+                return $link;
+            }
+        );
 
         // Micro articles
-        $data->microArticles = $crawler->filter('#kernetekst > div')->each(function (Crawler $node, $i) {
-            $link = new \stdClass();
-            $link->headline = trim($node->filter('h2')->text());
-            $link->content = trim($node->filter('div > div')->html());
-            return $link;
-        });
+        $data->microArticles = $crawler->filter('#kernetekst > div')->each(
+            function (Crawler $node, $i) {
+                $link = new \stdClass();
+                $link->headline = trim($node->filter('h2')->text());
+                $link->content = trim($node->filter('div > div')->html());
+                return $link;
+            }
+        );
 
         // Legislation
         $node = $crawler->filter('#lovgivning');

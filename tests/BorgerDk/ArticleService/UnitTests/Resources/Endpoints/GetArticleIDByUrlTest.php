@@ -53,5 +53,4 @@ class GetArticleIDByUrlTest extends BasicTest
         $result = $this->endpoint->getResultFormatted();
         $this->assertEquals($this->articleUrlId, $result->id);
     }
-
 }

@@ -26,7 +26,8 @@ class GetAllArticles extends ResourceAbstract
      *
      * @return array
      */
-    public function getResultFormatted() {
+    public function getResultFormatted()
+    {
         $result = $this->resourceResult->ArticleDescription;
         $items = array();
 
@@ -45,7 +46,8 @@ class GetAllArticles extends ResourceAbstract
      *
      * @return object
      */
-    protected function formatSingleArticle($article) {
+    protected function formatSingleArticle($article)
+    {
         $item = new \stdClass();
         $item->id = $article->ArticleID;
         $item->title = html_entity_decode($article->ArticleTitle, ENT_NOQUOTES, 'UTF-8');

@@ -26,7 +26,8 @@ class GetMunicipalityList extends ResourceAbstract
      *
      * @return array
      */
-    public function getResultFormatted() {
+    public function getResultFormatted()
+    {
         $result = $this->resourceResult->Municipality;
         $items = array();
 

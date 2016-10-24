@@ -52,7 +52,6 @@ class GetArticleByIDTest extends BasicTest
     {
         $result = $this->endpoint->getResultFormatted();
         $article = current($result);
-        $this->assertEquals($this->articleId1,  $article->id);
+        $this->assertEquals($this->articleId1, $article->id);
     }
-
 }
