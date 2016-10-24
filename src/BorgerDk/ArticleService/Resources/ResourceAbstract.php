@@ -95,8 +95,8 @@ abstract class ResourceAbstract
         $reflection = new \ReflectionClass($namespacedClassName);
         if ($reflection->isAbstract()) {
             return $this->getResourceNameFromClass(false);
-        } else {
-            return $resourceName;
         }
+
+        return $resourceName;
     }
 }
