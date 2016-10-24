@@ -15,4 +15,4 @@ install:
 
 script:
   - vendor/bin/phpunit
-  - vendor/bin/phpcs --extensions=php --standard=PSR2 --report=summary -np src/ tests/
+  - phpcs --extensions=php --standard=PSR2 src/ tests/
