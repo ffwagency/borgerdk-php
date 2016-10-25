@@ -81,22 +81,12 @@ abstract class ResourceAbstract
     /***
      * Return the resource name using the name of the class (used as soap methods / endpoints)
      *
-     * @param bool $parent
-     *   If TRUE are we first trying with the parent class name to support classes extending
-     *   the default resource endpoint classes.
-     *
      * @return string
      */
-    protected function getResourceNameFromClass($parent = true)
+    protected function getResourceNameFromClass()
     {
-        $namespacedClassName = $parent ? get_parent_class($this) : get_class($this);
+        $namespacedClassName = get_class($this);
         $resourceName = join('', array_slice(explode('\\', $namespacedClassName), -1));
-
-        $reflection = new \ReflectionClass($namespacedClassName);
-        if ($reflection->isAbstract()) {
-            return $this->getResourceNameFromClass(false);
-        }
-
         return $resourceName;
     }
 }

@@ -29,14 +29,10 @@ abstract class ArticleAbstract extends ResourceAbstract
     public function getResultFormatted()
     {
         $items = array();
+        $articles = isset($this->resourceResult->Article) ? $this->resourceResult->Article : array($this->resourceResult);
 
-        if (isset($this->resourceResult->Article)) {
-            foreach ($this->resourceResult->Article as $article) {
-                $articleItem = $this->formatSingleArticle($article);
-                $items[$articleItem->id] = $articleItem;
-            }
-        } else {
-            $articleItem = $this->formatSingleArticle($this->resourceResult);
+        foreach ($articles as $article) {
+            $articleItem = $this->formatSingleArticle($article);
             $items[$articleItem->id] = $articleItem;
         }
 

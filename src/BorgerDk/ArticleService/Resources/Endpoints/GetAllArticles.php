@@ -32,8 +32,8 @@ class GetAllArticles extends ResourceAbstract
         $items = array();
 
         foreach ($result as $article) {
-            $article_item = $this->formatSingleArticle($article);
-            $items[$article_item->id] = $article_item;
+            $articleItem = $this->formatSingleArticle($article);
+            $items[$articleItem->id] = $articleItem;
         }
 
         return $items;

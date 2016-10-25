@@ -1,6 +1,6 @@
 {
     "name": "ffwagency/borgerdk-php",
-    "description": "A simple PHP class to fetch articles from the Borger.dk article service.",
+    "description": "Borger.dk Article Export Service PHP SDK (unofficially)",
     "homepage": "https://github.com/ffwagency/borgerdk-php",
     "keywords": [
         "php", "ffwagency", "borgerdk", "borger.dk"
