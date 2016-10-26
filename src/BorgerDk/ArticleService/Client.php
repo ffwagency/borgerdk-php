@@ -51,8 +51,8 @@ class Client
     {
         try {
             $this->client = new SoapClient($this->soapUrl, $this->debug);
-        } catch (\SoapFault $e) {
-            new SoapException($e);
+        } catch (\SoapFault $fault) {
+            new SoapException($fault);
         }
     }
 
