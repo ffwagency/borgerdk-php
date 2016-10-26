@@ -13,6 +13,7 @@ namespace BorgerDk\ArticleService\Resources;
 
 use BorgerDk\ArticleService;
 use BorgerDk\ArticleService\Client as Client;
+use BorgerDk\ArticleService\Exceptions\SoapException;
 
 /**
  * Abstract class for all service endpoints
@@ -64,8 +65,12 @@ abstract class ResourceAbstract
             $this->resourceResultName = $this->resourceName . 'Result';
         }
 
-        $result = $this->client->{$this->resourceName}($this->params);
-        $this->resourceResult = $result->{$this->resourceResultName};
+        try {
+            $result = $this->client->{$this->resourceName}($this->params);
+            $this->resourceResult = $result->{$this->resourceResultName};
+        } catch (\SoapFault $e) {
+            new SoapException($e);
+        }
     }
 
     /**

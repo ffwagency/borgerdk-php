@@ -12,6 +12,7 @@
 namespace BorgerDk\ArticleService;
 
 use SoapClient;
+use BorgerDk\ArticleService\Exceptions\SoapException;
 
 /**
  * Class Client
@@ -39,14 +40,20 @@ class Client
      *
      * @var array
      */
-    protected $debug = ["trace" => 1, "exceptions" => 1];
+    protected $debug = ['trace' => 1, 'exceptions' => true];
 
     /**
+     * Initiate the SoapClient connection.
      *
+     * @throws \BorgerDk\ArticleService\Exceptions\SoapException
      */
     public function __construct()
     {
-        $this->client = new SoapClient($this->soapUrl, $this->debug);
+        try {
+            $this->client = new SoapClient($this->soapUrl, $this->debug);
+        } catch (\SoapFault $e) {
+            new SoapException($e);
+        }
     }
 
     /**
