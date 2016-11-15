@@ -34,7 +34,7 @@ abstract class ArticleAbstract extends ResourceAbstract
             $articles = is_array($this->resourceResult->Article) ?
                 $this->resourceResult->Article : array($this->resourceResult->Article);
         } else {
-              $articles = array($this->resourceResult);
+            $articles = array($this->resourceResult);
         }
 
         foreach ($articles as $article) {
