@@ -47,7 +47,7 @@ abstract class ArticleAbstract extends ResourceAbstract
      *
      * @return \stdClass
      */
-    private function formatSingleArticle($article)
+    public function formatSingleArticle($article)
     {
         $data = new \stdClass();
         $html = utf8_decode($article->Content);
