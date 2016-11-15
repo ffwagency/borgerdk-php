@@ -74,7 +74,7 @@ abstract class ArticleAbstract extends ResourceAbstract
         );
 
         // Micro articles
-        $data->microArticles = $crawler->filter('#kernetekst > div')->each(
+        $data->microArticles = $crawler->filter('#kernetekst > div[id^="microArticle_"]')->each(
             function (Crawler $node, $i) {
                 $link = new \stdClass();
                 $link->headline = trim($node->filter('h2')->text());
