@@ -20,8 +20,8 @@ use SoapFault;
  */
 class SoapException extends SoapFault
 {
-    public function __construct(SoapFault $e)
+    public function __construct(SoapFault $fault)
     {
-        trigger_error("SOAP Fault: (faultcode: {$e->faultcode}, faultstring: {$e->faultstring})", E_USER_ERROR);
+        trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
     }
 }

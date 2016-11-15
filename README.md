@@ -1,4 +1,4 @@
-# Borger.dk Article Export Service PHP SDK (Unofficially)
+# Borger.dk Article Import Service PHP SDK (Unofficially)
 
 [![Build Status](https://travis-ci.org/ffwagency/borgerdk-php.svg?branch=master)](https://travis-ci.org/ffwagency/borgerdk-php)
 [![Latest Stable Version](https://poser.pugx.org/ffwagency/borgerdk-php/v/stable)](https://packagist.org/packages/ffwagency/borgerdk-php)

@@ -47,7 +47,7 @@ abstract class ArticleAbstract extends ResourceAbstract
      *
      * @return \stdClass
      */
-    private function formatSingleArticle($article)
+    public function formatSingleArticle($article)
     {
         $data = new \stdClass();
         $html = utf8_decode($article->Content);
@@ -74,9 +74,10 @@ abstract class ArticleAbstract extends ResourceAbstract
         );
 
         // Micro articles
-        $data->microArticles = $crawler->filter('#kernetekst > div')->each(
+        $data->microArticles = $crawler->filter('#kernetekst > div[id^="microArticle_"]')->each(
             function (Crawler $node, $i) {
                 $link = new \stdClass();
+                $link->id = $this->getAttributeId($node);
                 $link->headline = trim($node->filter('h2')->text());
                 $link->content = trim($node->filter('div > div')->html());
                 return $link;

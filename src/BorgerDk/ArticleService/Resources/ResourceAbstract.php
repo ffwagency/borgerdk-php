@@ -68,8 +68,8 @@ abstract class ResourceAbstract
         try {
             $result = $this->client->{$this->resourceName}($this->params);
             $this->resourceResult = $result->{$this->resourceResultName};
-        } catch (\SoapFault $e) {
-            new SoapException($e);
+        } catch (\SoapFault $fault) {
+            new SoapException($fault);
         }
     }
 
