@@ -40,7 +40,7 @@ class Client
      *
      * @var array
      */
-    protected $debug = ['trace' => 1, 'exceptions' => true];
+    protected $debug = array('trace' => 1, 'exceptions' => true);
 
     /**
      * Initiate the SoapClient connection.

@@ -63,7 +63,7 @@ abstract class BasicTest extends \PHPUnit_Framework_TestCase
     /**
      * {@inheritdoc}
      */
-    public function __construct($name = null, array $data = [], $dataName = '')
+    public function __construct($name = null, array $data = array(), $dataName = '')
     {
         $this->municipalityCount    = (int) getenv('MUNICIPALITY_COUNT');
         $this->municipalityCode     = (int) getenv('MUNICIPALITY_CODE');
