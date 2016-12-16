@@ -46,9 +46,11 @@ class Client
     /**
      * Initiate the SoapClient connection.
      *
+     * @param string $lang
+     *
      * @throws \BorgerDk\ArticleService\Exceptions\SoapException
      */
-    public function __construct()
+    public function __construct($lang = 'da')
     {
         try {
             $soapUrl = (strcasecmp($lang, 'en') == 0) ? $this->soapUrlEn : $this->soapUrlDa;
