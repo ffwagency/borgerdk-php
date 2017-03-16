@@ -55,9 +55,9 @@ abstract class ArticleAbstract extends ResourceAbstract
     public function formatSingleArticle($article)
     {
         $data = new \stdClass();
-        $html = utf8_decode($article->Content);
-        $crawler = new Crawler($html);
-
+        $crawler = new Crawler();
+        $crawler->addHtmlContent($article->Content);
+        
         // Basic article data
         $data->id = $article->ArticleID;
         $data->title = html_entity_decode($article->ArticleTitle, ENT_NOQUOTES, 'UTF-8');
