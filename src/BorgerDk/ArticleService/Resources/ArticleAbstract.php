@@ -57,7 +57,7 @@ abstract class ArticleAbstract extends ResourceAbstract
         $data = new \stdClass();
         $crawler = new Crawler();
         $crawler->addHtmlContent($article->Content);
-        
+
         // Basic article data
         $data->id = $article->ArticleID;
         $data->title = html_entity_decode($article->ArticleTitle, ENT_NOQUOTES, 'UTF-8');
