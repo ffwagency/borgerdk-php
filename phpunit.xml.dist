@@ -14,6 +14,7 @@ convertWarningsToExceptions="true"
   <env name="ARTICLE_ID2" value="152"/>
   <env name="ARTICLE_URL" value="https://www.borger.dk/Sider/Adressebeskyttelse.aspx"/>
   <env name="ARTICLE_URL_ID" value="643"/>
+  <env name="SITE_ID" value="168"/>
 </php>
 
 <testsuites>
