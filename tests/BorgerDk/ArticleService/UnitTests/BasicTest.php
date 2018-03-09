@@ -61,6 +61,11 @@ abstract class BasicTest extends \PHPUnit_Framework_TestCase
     protected $articleUrlId;
 
     /**
+     * @var integer
+     */
+    protected $siteId;
+
+    /**
      * {@inheritdoc}
      */
     public function __construct($name = null, array $data = array(), $dataName = '')
@@ -71,6 +76,7 @@ abstract class BasicTest extends \PHPUnit_Framework_TestCase
         $this->articleId2           = (int) getenv('ARTICLE_ID2');
         $this->articleUrl           = getenv('ARTICLE_URL');
         $this->articleUrlId         = (int) getenv('ARTICLE_URL_ID');
+        $this->siteId               = (int) getenv('SITE_ID');
         parent::__construct($name, $data, $dataName);
     }
 
