@@ -29,7 +29,7 @@ class GetArticleIDsBySiteIDTest extends BasicTest
     /**
      * Setup the endpoint request.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $params = array('siteID' => $this->siteId);

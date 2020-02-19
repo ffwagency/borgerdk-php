@@ -29,7 +29,7 @@ class GetAllArticlesTest extends BasicTest
     /**
      * Setup the endpoint request.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->endpoint = new GetAllArticles($this->client);
