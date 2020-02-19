@@ -7,7 +7,7 @@
 [![License](https://poser.pugx.org/ffwagency/borgerdk-php/license)](https://packagist.org/packages/ffwagency/borgerdk-php)
 
 ## Requirements
-* PHP 5.4+
+* PHP 7.1+
 
 ## Installation
 
