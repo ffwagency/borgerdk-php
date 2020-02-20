@@ -11,7 +11,7 @@
 
 namespace BorgerDk\ArticleService\UnitTests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase as UnitTestCase;
 use BorgerDk\ArticleService;
 use BorgerDk\ArticleService\Client as Client;
 
@@ -20,7 +20,7 @@ use BorgerDk\ArticleService\Client as Client;
  *
  * @package BorgerDk\ArticleService
  */
-abstract class BasicTest extends \PHPUnit_Framework_TestCase
+abstract class BasicTest extends UnitTestCase
 {
     /**
      * Client Connection
@@ -83,8 +83,9 @@ abstract class BasicTest extends \PHPUnit_Framework_TestCase
     /**
      * Initiate the new Soap Client in the setup method.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
+        parent::setUp();
         $this->client = new Client();
     }
 }

@@ -19,7 +19,7 @@ use BorgerDk\ArticleService\Resources\Endpoints\GetAllSites;
  *
  * @package BorgerDk\ArticleService
  */
-class GetAllSitesTEst extends BasicTest
+class GetAllSitesTest extends BasicTest
 {
     /**
      * @var object
@@ -29,7 +29,7 @@ class GetAllSitesTEst extends BasicTest
     /**
      * Setup the endpoint request.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->endpoint = new GetAllSites($this->client);
