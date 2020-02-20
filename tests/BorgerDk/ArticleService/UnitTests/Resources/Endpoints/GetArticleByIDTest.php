@@ -29,7 +29,7 @@ class GetArticleByIDTest extends BasicTest
     /**
      * Setup the endpoint request.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $params = array('articleID' => $this->articleId1, 'municipalityCode' => $this->municipalityCode);
